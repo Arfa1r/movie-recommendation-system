@@ -23,7 +23,7 @@ This project uses item-based collaborative filtering with cosine similarity.
 ## ▶️ How to Run
 
 ```bash
-git clone https://github.com/yourusername/movie-recommendation-system.git
+git clone https://github.com/Arfa1r/movie-recommendation-system.git
 cd movie-recommendation-system
 pip install -r requirements.txt
 python app.py
