@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            min-height: 100vh;
+            color: white;
+        }
+
+        .navbar {
+            background-color: rgba(13,110,253,0.1);
+        }
+
+        .card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(23, 116, 255, 0.3);
+        }
+
+        .result-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: aliceblue;
+            box-shadow: 0 4px 12px rgba(13,110,253,0.3);
+        }
+
+        .btn-gaming {
+            background: #0b5ed7;
+            border: none;
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+        }
+
+        .btn-gaming:hover {
+            background: #0b5ed7;
+        }
+
+    
+    </style>
+</head>
+
+<body class="d-flex flex-column">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">Arfar7</a>
+        </div>
+    </nav>
+
+    <!-- Result Section -->
+    <div class="result-container">
+        <div class="card col-md-5 text-center">
+
+            <h3 class="text-primary">
+                🎬 Recommended movies for:<br>
+                <span class="text-white">{{ movie }}</span>
+            </h3>
+
+            {% if recommendations %}
+                <ul class="list-group list-group-flush">
+                    {% for rec in recommendations %}
+                        <li class="list-group-item bg-transparent text-white border-light">
+                            {{ rec }}
+                        </li>
+                    {% endfor %}
+                </ul>
+                <p class="text-danger-emphasis">Execution time: {{ execution_time }} seconds</p>
+            {% else %}
+                <p class="text-danger"> Movie not found !</p>
+            {% endif %}
+
+            <a href="/" class="btn btn-gaming mt-4">Back</a>
+
+        </div>
+    </div>
+
+</body>
+</html>
